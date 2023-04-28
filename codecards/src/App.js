@@ -4,47 +4,42 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Revising from './components/Revising';
 import AddCard from './components/AddCard';
-import deck from './Deck'; // hardcoded qs
+import deck from './Deck';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 
-  
-  // Card-flipping functionality, see Revising.js
   const [randomCard, setRandomCard] = useState(deck[0])
   const [flipToFront, setFlipToFront] = useState(true)
   
-  //const [newCard, setNewCard] = useState({}); //state of cards in the deck
+  const [userDeck, setUserDeck] = useState([...deck]);
   const [question, setQuestion] = useState(""); //text value of the question input
   const [answer, setAnswer] = useState(""); //text value of the answer input
 
   const randomCardClick = () => {
-    const randomIndex = Math.floor(Math.random() * deck.length);
+    const randomIndex = Math.floor(Math.random() * userDeck.length);
     setTimeout(() => {
-      setRandomCard(deck[randomIndex])
+      setRandomCard(userDeck[randomIndex])
     }, 300)
     setFlipToFront(true)
   };
-/////////////////////////////////
 
-  const questionTextChange = (e) => {
-    setQuestion(e.target.value);
-  } //sets the question state value to the question input value
-
-  const answerTextChange = (e) => {
-    setAnswer(e.target.value);
-  } //sets the answer state value to the answer input value
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "questionInput") {
+      setQuestion(value);
+    } else if (name === "answerInput") {
+      setAnswer(value);
+    }
+  }
 
   const handleAddClick = () => {
-    const newCard1 = { question, answer };
-    deck.push(newCard1)
-    //const newDeck = [...deck, newCard];
+    const newCard = { question, answer };
+    setUserDeck(prevState => [...prevState, newCard]);
     
     setQuestion("");
     setAnswer("");
   }
-  // adds the card to the deck
-  // console.log(deck1)
   
   console.log(deck)
 
@@ -61,8 +56,7 @@ function App() {
       <AddCard 
       question={question}
       answer={answer}
-      questionTextChange={questionTextChange} 
-      answerTextChange={answerTextChange} 
+      handleInputChange={handleInputChange} 
       handleAddClick={handleAddClick}
       />
       

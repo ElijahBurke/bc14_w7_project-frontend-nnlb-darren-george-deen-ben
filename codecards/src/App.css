@@ -5,7 +5,6 @@
 
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -34,7 +33,9 @@
   color: #61dafb;
 }
 
-.headerLink {
+.headerLink,
+.profile-icon,
+.logo {
   cursor: pointer;
   
 }
@@ -48,18 +49,29 @@
   }
 }
 
+
 .header {
-  display: flex;
-  justify-content: space-evenly; 
-  align-items: center;
-  background-color: #0c4768;
-  color: #c8dfca;
-  height: 120px;
   width: 100%;
-  position: fixed;
+  background-color: #0c4768;
+  color: #eee;
+  height: 120px;
   top: 0;
   /* To stop content from overflowing on to the header */
   z-index: 1000;
+}
+
+.header-elements {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.menu-elements {
+  display: flex;
+  flex-direction: column;
 }
 
 .header p {
@@ -67,14 +79,14 @@
 }
 
 .logo {
-  width: 5.5rem;
+  width: 5rem;
   /* z-index: 1000; */
   position: relative;
-  top: 0px;
 }
 
 .profile-icon {
-  width: 4em;
+  width: 40px;
+  height: 40px;
 }
 
 .landing-buttons-container {
@@ -103,7 +115,7 @@
 }
 
 .footer p {
-  color: white;
+  color: #eee;
   margin-top: 20px;
 }
 

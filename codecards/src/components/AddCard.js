@@ -1,10 +1,10 @@
 import React from 'react';
 
-const AddCard = ({ question, answer, questionTextChange, answerTextChange, handleAddClick }) => {
+const AddCard = ({ question, answer, handleInputChange, handleAddClick }) => {
   return (
     <div data-testid="addcard-component" className="addCardContainer">
-      <input className='questionText' type='text' placeholder='Enter question here' value={question} onChange={questionTextChange}></input>
-      <input className='answerText' type='text' placeholder='Enter answer here' value={answer} onChange={answerTextChange}></input>
+      <input className='questionText' type='text' name="questionInput" placeholder='Enter question here' value={question} onChange={handleInputChange}></input>
+      <input className='answerText' type='text' name="answerInput" placeholder='Enter answer here' value={answer} onChange={handleInputChange}></input>
       <button className='addCard' onClick={handleAddClick}>Add to Deck</button>
     </div>
   )
