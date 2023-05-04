@@ -1,3 +1,8 @@
+#app-body {
+  background-color: #E9F2FA;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
 }
@@ -28,6 +33,13 @@
   color: #61dafb;
 }
 
+.headerLink,
+.profile-icon,
+.logo {
+  cursor: pointer;
+  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +47,131 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.header {
+  width: 100%;
+  background-color: #0c4768;
+  color: #eee;
+  height: 120px;
+  top: 0;
+  /* To stop content from overflowing on to the header */
+  z-index: 1000;
+}
+
+.header-elements {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.menu-elements {
+  display: flex;
+  flex-direction: column;
+}
+
+.header p {
+  margin: 0;
+}
+
+.logo {
+  width: 5rem;
+  /* z-index: 1000; */
+  position: relative;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.landing-buttons-container {
+  margin-inline: auto;
+
+}
+
+.landing-buttons {
+  background-color: #263956;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 7px;
+  font-weight: bold;
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #0c4768;
+  height: 70px;
+}
+
+.footer p {
+  color: #eee;
+  margin-top: 20px;
+}
+
+.new-card-button {
+  background-color: #263956;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  width: 250px;
+}
+
+.addCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.questionText,
+.answerText,
+.addCard {
+  margin-bottom: 10px;
+  border: none;
+  padding: 10px 10px;
+}
+
+.questionText,
+.answerText {
+  width: 500px;
+  background-color: #e5e8ea;
+  font-weight: 600;
+  
+}
+
+/* .questionText::placeholder,
+.answerText::placeholder {
+  color: white;
+} */
+
+.questionText:focus,
+.answerText:focus {
+  outline: none;
+}
+
+.addCard {
+  background-color: #263956;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  width: 250px;
+  margin-top: 15px;
 }
